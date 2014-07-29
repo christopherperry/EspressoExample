@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "20.0.0"
+    buildToolsVersion '20.0.0'
 
     defaultConfig {
         applicationId "com.ensolabs.espressoexample"
@@ -10,6 +10,8 @@ android {
         targetSdkVersion 19
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
     }
     buildTypes {
         release {
@@ -21,7 +23,10 @@ android {
 
 dependencies {
     provided 'com.squareup.dagger:dagger-compiler:1.2.2'
+
     compile 'com.squareup.dagger:dagger:1.2.2'
     compile 'com.jakewharton:butterknife:5.1.1'
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    androidTestCompile 'com.jakewharton.espresso:espresso:1.1-r3'
 }
